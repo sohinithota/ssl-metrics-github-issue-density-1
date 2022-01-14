@@ -180,13 +180,15 @@ def main():
     df: DataFrame = pandas.read_json(args.input)
 
     if args.x_window_max <= -1:
-        x: list = df["days_since_0"].to_list()[args.x_window_min:]
-        y: list = df["defect_density"].tolist()[args.x_window_min:]
+        x: list = df["days_since_0"].to_list()[args.x_window_min :]
+        y: list = df["defect_density"].tolist()[args.x_window_min :]
     else:
         x: list = df["days_since_0"].to_list()[
-            args.x_window_min: args.x_window_max + 1
+            args.x_window_min : args.x_window_max + 1
         ]
-        y: list = df["defect_density"].tolist()[args.x_window_min: args.x_window_max + 1]
+        y: list = df["defect_density"].tolist()[
+            args.x_window_min : args.x_window_max + 1
+        ]
 
     if args.output != None:
         plot(

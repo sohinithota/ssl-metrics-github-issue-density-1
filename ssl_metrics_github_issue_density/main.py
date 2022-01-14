@@ -1,15 +1,15 @@
+import math
 from argparse import ArgumentParser, Namespace
 from collections import Counter
 from datetime import date, datetime, timedelta
-import math
+from pprint import pprint
 
-from dateutil.parser import parse
-from intervaltree import Interval, IntervalTree
 import numpy as np
 import pandas as pd
-from pandas import DataFrame
-from pprint import pprint
+from dateutil.parser import parse
+from intervaltree import Interval, IntervalTree
 from matplotlib import pyplot as plt
+from pandas import DataFrame
 
 
 def getArgs():
@@ -42,27 +42,29 @@ def getArgs():
 
 
 def get_timestamp():
-    '''returns relevant timestamp information
+    """returns relevant timestamp information
 
     :return first: the first day of the repo
     :return last: the last day of the repo (todays date)
     :return days: list of days the repo has existed
-    '''
+    """
 
-    first: DateTime = parse(pd.read_json(getArgs().commits)["commit_date"][0]).replace(tzinfo=None)
+    first: DateTime = parse(pd.read_json(getArgs().commits)["commit_date"][0]).replace(
+        tzinfo=None
+    )
     last: DateTime = datetime.now().replace(tzinfo=None)
     days = [i for i in range((last - first).days)]
     return first, last, days
 
 
 def get_intervals(*, issues, commits) -> list[tuple()]:
-    '''return start and end intervals of each issue in a repo
+    """return start and end intervals of each issue in a repo
 
     :param commits: DataFrame
     :param issues: DataFrame
 
     :return intervals: list
-    '''
+    """
 
     first, last, days = get_timestamp()
 
@@ -85,33 +87,33 @@ def get_intervals(*, issues, commits) -> list[tuple()]:
 
 
 def build_tree(*, issues, commits, intervals) -> IntervalTree:
-    '''builds interval tree
+    """builds interval tree
 
     :param commits: DataFrame
     :param issues: DataFrame
     :param intervals: list
 
     :return tree: IntervalTree
-    '''
+    """
 
     tree = IntervalTree()
 
     # add all items to interval tree
     for interval in intervals:
-        tree.addi(interval[0], interval[1]+1, 1)
+        tree.addi(interval[0], interval[1] + 1, 1)
 
     return tree
 
 
 def get_daily_kloc(commits):
-    '''returns a list of average kloc per day'''
+    """returns a list of average kloc per day"""
 
     first, last, days = get_timestamp()
 
     daily_kloc = []
     prev = 0
     for day in days:
-        avg_kloc = commits[commits['day_since_0'] == day]['kloc'].mean()
+        avg_kloc = commits[commits["day_since_0"] == day]["kloc"].mean()
         daily_kloc.append(avg_kloc if not avg_kloc is np.nan else prev)
         prev = avg_kloc if not avg_kloc is np.nan else prev
 
@@ -119,7 +121,7 @@ def get_daily_kloc(commits):
 
 
 def get_daily_defects(tree):
-    '''returns a list of number of defects per day'''
+    """returns a list of number of defects per day"""
 
     first, last, days = get_timestamp()
 
@@ -145,11 +147,11 @@ def main():
 
     kloc = get_daily_kloc(commits)
     defects = get_daily_defects(tree)
-    ddensity = [nd/k for nd, k in zip(defects, kloc)]
+    ddensity = [nd / k for nd, k in zip(defects, kloc)]
 
     d = {
-        'days_since_0': days,
-        'defect_density': ddensity,
+        "days_since_0": days,
+        "defect_density": ddensity,
     }
 
     out = pd.DataFrame(data=d)
