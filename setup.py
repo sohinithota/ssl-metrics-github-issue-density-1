@@ -6,8 +6,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="ssl-metrics-issue-density",
-    packages=["ssl_metrics_issue_density"],
+    name="ssl-metrics-github-issue-density",
+    packages=["ssl_metrics_github_issue_density"],
     version=version.version(),
     description="SSL Metrics - Defect density of a github repository. ",
     author="Software and Systems Laboratory - Loyola University Chicago",
@@ -17,8 +17,8 @@ setup(
     long_description_content_type="text/markdown",
     url="https://ssl.cs.luc.edu/projects/metricsDashboard",
     project_urls={
-        "Bug Tracker": "https://github.com/SoftwareSystemsLaboratory/ssl-metrics-issue-density/issues",
-        "GitHub Repository": "https://github.com/SoftwareSystemsLaboratory/ssl-metrics-issue-density",
+        "Bug Tracker": "https://github.com/SoftwareSystemsLaboratory/ssl-metrics-github-issue-density/issues",
+        "GitHub Repository": "https://github.com/SoftwareSystemsLaboratory/ssl-metrics-github-issue-density",
     },
     keywords=[
         "commits",
@@ -66,8 +66,8 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "ssl-metrics-issue-density-collect = ssl_metrics_issue_density.main:main",
-            "ssl-metrics-issue-density-graph = ssl_metrics_issue_density.create_graph:main",
+            "ssl-metrics-github-issue-density-collect = ssl_metrics_github_issue_density.main:main",
+            "ssl-metrics-github-issue-density-graph = ssl_metrics_github_issue_density.create_graph:main",
         ]
     },
 )
