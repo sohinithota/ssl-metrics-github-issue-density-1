@@ -12,7 +12,7 @@ setup(
     description="SSL Metrics - Defect density of a github repository. ",
     author="Software and Systems Laboratory - Loyola University Chicago",
     author_email="ssl-metrics@ssl.luc.edu",
-    license="Apache License 2.0",
+    license="BSD",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://ssl.cs.luc.edu/projects/metricsDashboard",
