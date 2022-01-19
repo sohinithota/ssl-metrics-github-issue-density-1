@@ -1,14 +1,10 @@
-import math
 from argparse import ArgumentParser, Namespace
-from collections import Counter
-from datetime import date, datetime, timedelta
-from pprint import pprint
+from datetime import datetime
 
 import numpy as np
 import pandas as pd
 from dateutil.parser import parse
-from intervaltree import Interval, IntervalTree
-from matplotlib import pyplot as plt
+from intervaltree import IntervalTree
 from pandas import DataFrame
 
 
@@ -49,10 +45,10 @@ def get_timestamp():
     :return days: list of days the repo has existed
     """
 
-    first: DateTime = parse(pd.read_json(getArgs().commits)["commit_date"][0]).replace(
+    first: datetime = parse(pd.read_json(getArgs().commits)["commit_date"][0]).replace(
         tzinfo=None
     )
-    last: DateTime = datetime.now().replace(tzinfo=None)
+    last: datetime = datetime.now().replace(tzinfo=None)
     days = [i for i in range((last - first).days)]
     return first, last, days
 
