@@ -130,4 +130,6 @@ dmypy.json
 
 .vscode
 
+!.zenodo.json
 *.json
+*.png

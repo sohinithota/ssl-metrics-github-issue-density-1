@@ -109,7 +109,7 @@ def get_daily_kloc(commits):
     daily_kloc = []
     prev = 0
     for day in days:
-        avg_kloc = commits[commits["day_since_0"] == day]["kloc"].mean()
+        avg_kloc = commits[commits["days_since_0"] == day]["kloc"].mean()
         daily_kloc.append(avg_kloc if not avg_kloc is np.nan else prev)
         prev = avg_kloc if not avg_kloc is np.nan else prev
 
