@@ -28,7 +28,7 @@ def getArgparse() -> Namespace:
         "--output",
         help="The filename to output the bus factor graph to",
         type=str,
-        required=False,
+        required=True,
     )
     parser.add_argument(
         "-m",
@@ -43,7 +43,7 @@ def getArgparse() -> Namespace:
         "--repository-name",
         help="Name of the repository that is being analyzed",
         type=str,
-        required=False,
+        required=True,
     )
     parser.add_argument(
         "--x-window-min",
