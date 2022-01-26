@@ -21,10 +21,13 @@ setup(
         "GitHub Repository": "https://github.com/SoftwareSystemsLaboratory/ssl-metrics-github-issue-density",
     },
     keywords=[
+        "bus factor",
         "commits",
         "engineering",
         "git",
         "github",
+        "issue density",
+        "issues",
         "kloc",
         "loyola",
         "loyola university chicago",
@@ -38,7 +41,7 @@ setup(
         "software engineering",
         "software metrics",
         "software systems laboratory",
-        "ssl",
+        "ssl"
     ],
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -66,7 +69,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "ssl-metrics-github-issue-density-collect = ssl_metrics_github_issue_density.main:main",
+            "ssl-metrics-github-issue-density-compute = ssl_metrics_github_issue_density.main:main",
             "ssl-metrics-github-issue-density-graph = ssl_metrics_github_issue_density.create_graph:main",
         ]
     },

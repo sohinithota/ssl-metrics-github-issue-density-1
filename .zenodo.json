@@ -1,7 +1,16 @@
 {
     "upload_type": "software",
-    "title": "SoftwareSystemsLaboratory/ssl-metrics-git-commits-loc",
+    "title": "SoftwareSystemsLaboratory/ssl-metrics-github-issue-density",
     "creators": [
+        {
+        "name": "Hyatt, Matt",
+        "affiliation": "Loyola University Chicago",
+        "orcid": "0000-0002-6356-6832"
+        },
+        {
+        "name": "Thota, Sohini",
+        "affiliation": "Loyola University Chicago",
+        },
         {
         "name": "Synovic, Nicholas",
         "affiliation": "Loyola University Chicago",
@@ -18,10 +27,13 @@
     "license": "BSD-3-Clause",
     "prereserve_doi": true,
     "keywords": [
+        "bus factor",
         "commits",
         "engineering",
         "git",
         "github",
+        "issue density",
+        "issues",
         "kloc",
         "loyola",
         "loyola university chicago",
