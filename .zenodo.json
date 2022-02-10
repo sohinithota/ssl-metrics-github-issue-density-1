@@ -1,6 +1,6 @@
 {
     "upload_type": "software",
-    "title": "SoftwareSystemsLaboratory/ssl-metrics-github-issue-density",
+    "title": "SoftwareSystemsLaboratory/ssl-metrics",
     "creators": [
         {
         "name": "Hyatt, Matt",
@@ -8,13 +8,14 @@
         "orcid": "0000-0002-6356-6832"
         },
         {
-        "name": "Thota, Sohini",
-        "affiliation": "Loyola University Chicago",
-        },
-        {
         "name": "Synovic, Nicholas",
         "affiliation": "Loyola University Chicago",
         "orcid": "0000-0003-0413-4594"
+        },
+        {
+        "name": "Thota, Sohini",
+        "affiliation": "Loyola University Chicago",
+        "orcid": "0000-0002-3496-8867"
         },
         {
         "name": "Thiruvathukal, George K.",
@@ -22,7 +23,7 @@
         "orcid": "0000-0002-0452-5571"
         }
     ],
-    "description": "This is a proof of concept demonstrating that it is possible to use GitHub issues and git commits to calculate issue density.",
+    "description": "A python tool to calculate the issue density of a GitHub repository",
     "access_right": "open",
     "license": "BSD-3-Clause",
     "prereserve_doi": true,
