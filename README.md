@@ -14,9 +14,14 @@
   - [About](#about)
   - [Developer Tooling](#developer-tooling)
     - [Operating System](#operating-system)
+  - [Shell Software](#shell-software)
+    - [Required Shell Software](#required-shell-software)
+    - [Optional Shell Software](#optional-shell-software)
+  - [Python Software](#python-software)
+    - [Required Python Software](#required-python-software)
   - [How To Use](#how-to-use)
     - [Installation](#installation)
-    - [Command Line Arguements](#command-line-arguements)
+    - [Command Line Arguments](#command-line-arguments)
 
 ## About
 
@@ -47,6 +52,8 @@ For reasons why you might want to install this software, see the [Parallel Execu
 
 ### Python Software
 
+#### Required Python Software
+
 All listed Python software assumes that you have downloaded and installed **Python 3.9.6** or greater.
 
 - `ssl-metrics-meta`
@@ -65,7 +72,7 @@ You can install the tool via `pip` with either of the two following one-liners:
 - `pip install --upgrade pip ssl-metrics-meta`
 - `pip install --upgrade pip ssl-metrics-github-issue-density`
 
-### Command Line Arguements
+### Command Line Arguments
 
 `ssl-metrics-github-issue-density-compute -h`
 
