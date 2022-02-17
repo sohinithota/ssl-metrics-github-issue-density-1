@@ -33,6 +33,28 @@ To maximize the utility of this project and the greater SSL Metrics project, the
 All tools developed for the greater SSL Metrics project **must target** Mac OS and Linux. SSL Metrics software is not supported or recommended to run on Windows *but can be modified to do so at your own risk*.
 
 It is recomendded to develop on Mac OS or Linux. However, if you are on a Windows machine, you can use WSL to develop as well.
+### Shell Software
+
+#### Required Shell Software
+
+- `git`
+
+#### Optional Shell Software
+
+For reasons why you might want to install this software, see the [Parallel Execution](#parallel-execution) section.
+
+- `parallel`
+
+### Python Software
+
+All listed Python software assumes that you have downloaded and installed **Python 3.9.6** or greater.
+
+- `ssl-metrics-meta`
+
+You can install the Python software with this one-liner:
+
+`pip install --upgrade pip ssl-metrics-meta`
+
 
 ## How To Use
 
